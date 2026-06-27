@@ -98,14 +98,8 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
       </button>
 
       {/* Logo Lockup */}
-      <div className="flex items-center gap-3 p-6 border-b border-border-subtle shrink-0">
-        <div className="w-11 h-11 shrink-0 rounded-md bg-brand-50 flex items-center justify-center p-1.5 border border-brand-100">
-          <img src={logo} alt="CTC" className="w-full h-full object-contain" />
-        </div>
-        <div>
-          <h3 className="text-base font-bold text-ink-900 leading-tight">CTC</h3>
-          <p className="text-[9px] font-bold text-ink-500 uppercase tracking-widest leading-none mt-0.5">COPY TRADE COMPARE</p>
-        </div>
+      <div className="flex items-center justify-center p-6 border-b border-border-subtle shrink-0">
+        <img src={logo} alt="CTC" className="h-16 w-auto object-contain" />
       </div>
 
       {/* Nav Groups */}
