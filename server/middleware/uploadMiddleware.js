@@ -38,9 +38,13 @@ if (USE_CLOUDINARY) {
   console.log('📦 Upload storage: Cloudinary');
 } else {
   // Local disk fallback for development
-  const uploadDir = path.join(__dirname, '../uploads');
-  if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
+  const uploadDir = process.env.VERCEL ? '/tmp' : path.join(__dirname, '../uploads');
+  try {
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+  } catch (err) {
+    console.warn('⚠️ Warning: Failed to create upload directory:', err.message);
   }
 
   storage = multer.diskStorage({

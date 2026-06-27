@@ -48,7 +48,7 @@ app.use(helmet({ crossOriginResourcePolicy: false })); // Security headers
 app.use(cors({ origin: true, credentials: true })); // Enable CORS dynamically
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: false })); // Parse URL-encoded bodies
-app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded files
+app.use('/uploads', express.static(process.env.VERCEL ? '/tmp' : path.join(__dirname, 'uploads'))); // Serve uploaded files
 
 // Serve Frontend in Production
 if (process.env.NODE_ENV === 'production') {
