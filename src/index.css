@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand / Primary */
+  --color-brand-50: #FDF1FF;
+  --color-brand-100: #F9DCFC;
+  --color-brand-500: #F310FD;
+  --color-brand-600: #D60DE0;
+  --color-brand-700: #B109BD;
+
+  --color-primary: #F310FD;
+  --color-primary-dark: #C70AD1;
+  --color-primary-light: #FDE8FE;
+  
+  /* Secondary */
+  --color-secondary: #00D4AA;
+  --color-secondary-dark: #00B8A1;
+  --color-secondary-light: #E0F9F7;
+
+  /* Ink / Text */
+  --color-ink-100: #E8E5EE;
+  --color-ink-300: #A6A1B3;
+  --color-ink-500: #6B6678;
+  --color-ink-700: #3D3850;
+  --color-ink-900: #14121A;
+
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #4A4A6A;
+  --color-text-tertiary: #7A7A9A;
+  --color-text-disabled: #B8B8D0;
+
+  /* Surface / Background */
+  --color-surface-0: #FFFFFF;
+  --color-surface-50: #FAF9FC;
+  --color-surface-100: #F3F1F8;
+  --color-border-subtle: #EAE6F2;
+
+  --color-bg-main: #F8F7FF;
+  --color-bg-secondary: #F0EEFF;
+  --color-bg-card: #FFFFFF;
+  --color-bg-light: #FAF9FF;
+
+  /* Border */
+  --color-border: #E8E6F0;
+  --color-border-light: #F0EEF6;
+  --color-border-dark: #D0CEE0;
+
+  /* Status */
+  --color-success-50: #E8FBF1;
+  --color-success-500: #16B872;
+  --color-danger-50: #FEEAEE;
+  --color-danger-500: #F23656;
+  --color-warning-50: #FFF6E8;
+  --color-warning-500: #F5A623;
+  --color-gold-500: #D4A017;
+
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(20, 18, 26, 0.04);
+  --shadow-md: 0 4px 16px rgba(20, 18, 26, 0.06);
+  --shadow-lg: 0 12px 32px rgba(20, 18, 26, 0.10);
+  --shadow-brand: 0 8px 24px rgba(243, 16, 253, 0.25);
+
+  --shadow-card: 0 4px 20px rgba(26, 26, 46, 0.08);
+  --shadow-card-hover: 0 8px 40px rgba(243, 16, 253, 0.12);
+  --shadow-card-active: 0 12px 60px rgba(243, 16, 253, 0.2);
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-main) !important;
+    color: var(--color-text-primary) !important;
+    font-family: var(--font-body);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes statusPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.3); }
+  50% { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes countUpLight {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes packageBounceLight {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(5deg); }
+}
+
+@keyframes pageEnterLight {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes buttonRippleLight {
+  0% { transform: scale(0); opacity: 0.3; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
